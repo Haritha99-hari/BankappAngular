@@ -1,0 +1,32 @@
+<div class="container" style="background-image: url(assets/images/485221.jpg);">
+    <h1 style="margin-top: 5%;" style="color:rgb(184, 183, 112);">Welcome To SBN Bank</h1>
+    <br>
+    <a routerLink="/history">History</a>
+    <div class="row">
+        <div class="col-8">
+            <form [formGroup]=" homeForm">
+                <div class="form-group">
+                    <label for="" style="color: wheat;">Username</label>
+                    <input formControlName="UserName" type="text" name="uname" class="form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="" style="color: wheat;">Password</label>
+                    <input formControlName="Password" type="password" name="pwd" class="form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="" style="color: wheat;">Amount</label>
+                    <input formControlName="Amount" type="number" name="amt" class="form-control">
+                </div>
+                <br>
+
+                <button type="button" (click)="deposit()" class="btn btn-dark">Deposit</button>
+                <button type="button" (click)="withdraw()" class="btn btn-dark">Withdrawal</button>
+            </form>
+        </div>
+        <div>
+            <div class="col-4"> </div>
+        </div>
+    </div>
+</div>

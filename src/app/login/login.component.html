@@ -1,0 +1,33 @@
+<div class="container" style="background-image: url(assets/images/wp4316542.jpg); color: antiquewhite;">
+    <div class="main">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <b>
+                    <h1 style="color:black">Login SBN Bank</h1>
+                </b>
+            </div>
+            <div class="col"></div>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" style="color: black;">UserName <span class="required" style="color: red;">*</span></label>
+                <input formControlName="username" name="username" type="text" class="form-control" aria-describedby="emailHelp">
+                <label *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.errors?.required" style="color:red;">Username is required</label>
+                <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" style="color: black;">Password *</label>
+                <input formControlName="password" name="password" type="password" class="form-control">
+                <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors">
+                    <label *ngIf="loginForm.get('password')?.errors?.required" style="color:red;">Password is required</label>
+                    <label *ngIf="loginForm.get('password')?.errors?.minlength" style="color:red;">Password must contain atleast 5 characters</label>
+                </div>
+            </div>
+            <button type="submit"  class="btn btn-dark">Login</button>
+
+        </form>
+    </div>
+</div>
